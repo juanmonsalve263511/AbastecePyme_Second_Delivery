@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Catálogo de proveedores, insumos, productos y sus dependencias de AbastecePyme.">
+  <title>Catálogo de dependencias · AbastecePyme</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Ir al catálogo</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">a<span>p</span></span><span>Abastece<span class="brand-light">Pyme</span></span></div>
+    <div class="topbar-meta"><span class="status-dot"></span> Catálogo de abastecimiento <span class="demo-tag">Datos de ejemplo</span></div>
+  </header>
+  <main id="contenido">
+    <div class="page-heading">
+      <div><p class="eyebrow">COMPRAS / PRODUCCIÓN</p><h1>Catálogo de dependencias</h1><p class="intro">Registra lo que necesitas y conecta los elementos que dependen de ello.</p></div>
+      <a class="button button-quiet api-link" href="/api/grafo" target="_blank" rel="noopener">Consultar API <span aria-hidden="true">↗</span></a>
+    </div>
+    <div id="connection-message" class="message" role="alert" hidden></div>
+    <section class="metrics" aria-label="Resumen del catálogo">
+      <div class="metric"><span class="metric-icon supplier" aria-hidden="true">P</span><div><strong id="count-proveedor">—</strong><span>Proveedores</span></div></div>
+      <div class="metric"><span class="metric-icon input" aria-hidden="true">I</span><div><strong id="count-insumo">—</strong><span>Insumos</span></div></div>
+      <div class="metric"><span class="metric-icon product" aria-hidden="true">P</span><div><strong id="count-producto">—</strong><span>Productos</span></div></div>
+      <div class="metric"><span class="metric-icon relation" aria-hidden="true">↗</span><div><strong id="count-edges">—</strong><span>Dependencias</span></div></div>
+    </section>
+    <div class="workspace">
+      <section class="panel network-panel" aria-labelledby="network-title">
+        <div class="panel-heading"><div><h2 id="network-title">Red de dependencias</h2><p>Las flechas van del requisito al elemento que lo necesita.</p></div><button id="refresh" class="button button-quiet" type="button" aria-label="Actualizar catálogo">↻ <span>Actualizar</span></button></div>
+        <div class="network-key"><span class="direction-key">Requisito <b aria-hidden="true">→</b> Dependiente</span><span class="muted">Agrupada por tipo</span></div>
+        <div id="graph-scroll" class="graph-scroll" tabindex="0" role="region" aria-label="Red de dependencias; desplazamiento horizontal disponible. La misma información está en las tablas inferiores.">
+          <svg id="graph" xmlns="http://www.w3.org/2000/svg" aria-labelledby="graph-title graph-desc" viewBox="0 0 1000 500"><title id="graph-title">Red de dependencias</title><desc id="graph-desc">Cargando elementos.</desc></svg>
+          <p id="graph-empty" class="empty-state" hidden>El catálogo está vacío. Registra el primer elemento para comenzar.</p>
+        </div>
+        <div class="selection-info"><div><span class="selection-label">CONEXIONES DIRECTAS</span><p id="selection-text" aria-live="polite">Selecciona un elemento de la red para resaltar sus conexiones.</p></div><button id="clear-selection" class="button button-quiet" type="button" hidden>Quitar selección</button></div>
+        <div class="legend" aria-label="Tipos de elementos"><span><i class="dot supplier"></i>Proveedor</span><span><i class="dot input"></i>Insumo</span><span><i class="dot product"></i>Producto</span><span class="legend-note">Los elementos aislados también forman parte del catálogo.</span></div>
+      </section>
+      <aside class="forms" aria-label="Registro de elementos y dependencias">
+        <section class="panel form-panel"><div class="form-heading"><span class="step">01</span><h2>Nuevo elemento</h2></div>
+          <form id="element-form">
+            <label for="element-type">Tipo</label><select id="element-type" name="tipo" required><option value="proveedor">Proveedor</option><option value="insumo" selected>Insumo</option><option value="producto">Producto</option></select>
+            <label for="element-id">Identificador único</label><input id="element-id" name="id" placeholder="Ej. INS-PEGAMENTO" minlength="2" maxlength="40" pattern="[A-Za-z][A-Za-z0-9_\-]{1,39}" aria-describedby="id-help" required><small id="id-help">De 2 a 40 caracteres. Letras, números, - o _. Se guarda en mayúsculas.</small>
+            <label for="element-name">Nombre</label><input id="element-name" name="nombre" placeholder="Ej. Pegamento para madera" minlength="2" maxlength="80" required>
+            <button class="button button-primary" type="submit">+ Registrar elemento</button><p id="element-message" class="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+        <section class="panel form-panel"><div class="form-heading"><span class="step">02</span><h2>Nueva dependencia</h2></div>
+          <form id="dependency-form">
+            <label for="dependency-source">Requisito <span class="muted">· origen</span></label><select id="dependency-source" name="origen" required><option value="">Selecciona un requisito</option></select>
+            <div class="form-arrow" aria-hidden="true">↓ <span>habilita a</span></div>
+            <label for="dependency-target">Elemento dependiente <span class="muted">· destino</span></label><select id="dependency-target" name="destino" required><option value="">Selecciona un elemento</option></select>
+            <p id="dependency-preview" class="dependency-preview" aria-live="polite">Selecciona ambos elementos para leer la relación.</p>
+            <button class="button button-secondary" type="submit">↗ Registrar dependencia</button><p id="dependency-message" class="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </aside>
+    </div>
+    <div class="catalog-tables">
+      <section class="panel" aria-labelledby="elements-title"><div class="panel-heading"><h2 id="elements-title">Elementos registrados <span id="total-elements" class="count-badge">0</span></h2></div><div class="table-scroll"><table><caption class="sr-only">Catálogo de elementos y su tipo</caption><thead><tr><th scope="col">Elemento</th><th scope="col">Tipo</th><th scope="col">ID</th></tr></thead><tbody id="elements-body"></tbody></table></div><p id="elements-empty" class="empty-state" hidden>Aún no hay elementos registrados.</p></section>
+      <section class="panel" aria-labelledby="dependencies-title"><div class="panel-heading"><h2 id="dependencies-title">Dependencias registradas <span id="total-dependencies" class="count-badge">0</span></h2></div><div class="table-scroll"><table><caption class="sr-only">Cada fila significa que el origen es un requisito del destino</caption><thead><tr><th scope="col">Requisito</th><th scope="col" class="arrow-cell"><span class="sr-only">Habilita a</span></th><th scope="col">Dependiente</th></tr></thead><tbody id="dependencies-body"></tbody></table></div><p id="dependencies-empty" class="empty-state" hidden>Aún no hay dependencias registradas.</p></section>
+    </div>
+    <footer>AbastecePyme <span>Catálogo con datos sintéticos · Entrega 01</span></footer>
+  </main>
+</body>
+</html>

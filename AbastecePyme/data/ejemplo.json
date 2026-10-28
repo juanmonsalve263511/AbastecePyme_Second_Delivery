@@ -1,0 +1,564 @@
+{
+  "elementos": [
+    {
+      "id": "PROV-MADERA",
+      "nombre": "Maderas del Norte",
+      "tipo": "proveedor"
+    },
+    {
+      "id": "PROV-FERRE",
+      "nombre": "Ferretería Central",
+      "tipo": "proveedor"
+    },
+    {
+      "id": "PROV-ACAB",
+      "nombre": "Acabados Andinos",
+      "tipo": "proveedor"
+    },
+    {
+      "id": "INS-MADERA",
+      "nombre": "Tablero de madera",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-TORNILLOS",
+      "nombre": "Tornillos",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-BARNIZ",
+      "nombre": "Barniz",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-TELA",
+      "nombre": "Tela de tapicería",
+      "tipo": "insumo"
+    },
+    {
+      "id": "PROD-MESA",
+      "nombre": "Mesa de trabajo",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-ESTANTE",
+      "nombre": "Estante modular",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROV-TABLEROS",
+      "nombre": "Tableros del Valle",
+      "tipo": "proveedor"
+    },
+    {
+      "id": "PROV-HERRAJES",
+      "nombre": "Herrajes del Taller",
+      "tipo": "proveedor"
+    },
+    {
+      "id": "PROV-TEXTILES",
+      "nombre": "Textiles del Hogar",
+      "tipo": "proveedor"
+    },
+    {
+      "id": "PROV-ESPUMAS",
+      "nombre": "Espumas del Centro",
+      "tipo": "proveedor"
+    },
+    {
+      "id": "PROV-ADHESIVOS",
+      "nombre": "Adhesivos para Madera",
+      "tipo": "proveedor"
+    },
+    {
+      "id": "INS-MDF",
+      "nombre": "Tablero MDF",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-MELAMINA",
+      "nombre": "Tablero melamínico",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-CONTRACHAPADO",
+      "nombre": "Tablero contrachapado",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-CANTO",
+      "nombre": "Canto de PVC",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-BISAGRAS",
+      "nombre": "Bisagras para puertas",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-CORREDERAS",
+      "nombre": "Correderas para cajones",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-TIRADORES",
+      "nombre": "Tiradores para muebles",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-PATAS",
+      "nombre": "Patas prefabricadas",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-SOPORTES",
+      "nombre": "Soportes para entrepaños",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-ESPUMA",
+      "nombre": "Espuma para tapicería",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-COLA",
+      "nombre": "Cola para madera",
+      "tipo": "insumo"
+    },
+    {
+      "id": "INS-FIELTRO",
+      "nombre": "Fieltro protector",
+      "tipo": "insumo"
+    },
+    {
+      "id": "PROD-MESA-COMEDOR",
+      "nombre": "Mesa de comedor",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-ESCRITORIO",
+      "nombre": "Escritorio con cajones",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-MESA-CENTRO",
+      "nombre": "Mesa de centro",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-MESA-NOCHE",
+      "nombre": "Mesa de noche",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-SILLA-COMEDOR",
+      "nombre": "Silla de comedor",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-BANCO-RECIBIDOR",
+      "nombre": "Banco de recibidor",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-BIBLIOTECA",
+      "nombre": "Biblioteca de entrepaños",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-ARMARIO",
+      "nombre": "Armario de dos puertas",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-COMODA",
+      "nombre": "Cómoda de cajones",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-MUEBLE-TV",
+      "nombre": "Mueble para televisión",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-ZAPATERO",
+      "nombre": "Zapatero con puertas",
+      "tipo": "producto"
+    },
+    {
+      "id": "PROD-BANCO-TAPIZADO",
+      "nombre": "Banco tapizado",
+      "tipo": "producto"
+    }
+  ],
+  "dependencias": [
+    {
+      "origen": "PROV-MADERA",
+      "destino": "INS-MADERA"
+    },
+    {
+      "origen": "PROV-FERRE",
+      "destino": "INS-TORNILLOS"
+    },
+    {
+      "origen": "PROV-ACAB",
+      "destino": "INS-BARNIZ"
+    },
+    {
+      "origen": "INS-MADERA",
+      "destino": "PROD-MESA"
+    },
+    {
+      "origen": "INS-MADERA",
+      "destino": "PROD-ESTANTE"
+    },
+    {
+      "origen": "INS-MADERA",
+      "destino": "PROD-MESA-COMEDOR"
+    },
+    {
+      "origen": "INS-MADERA",
+      "destino": "PROD-MESA-CENTRO"
+    },
+    {
+      "origen": "INS-MADERA",
+      "destino": "PROD-SILLA-COMEDOR"
+    },
+    {
+      "origen": "INS-MADERA",
+      "destino": "PROD-BANCO-RECIBIDOR"
+    },
+    {
+      "origen": "INS-MADERA",
+      "destino": "PROD-BANCO-TAPIZADO"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-MESA"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-ESTANTE"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-MESA-COMEDOR"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-ESCRITORIO"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-MESA-CENTRO"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-MESA-NOCHE"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-SILLA-COMEDOR"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-BANCO-RECIBIDOR"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-BIBLIOTECA"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-ARMARIO"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-COMODA"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-MUEBLE-TV"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-ZAPATERO"
+    },
+    {
+      "origen": "INS-TORNILLOS",
+      "destino": "PROD-BANCO-TAPIZADO"
+    },
+    {
+      "origen": "INS-BARNIZ",
+      "destino": "PROD-MESA"
+    },
+    {
+      "origen": "INS-BARNIZ",
+      "destino": "PROD-ESTANTE"
+    },
+    {
+      "origen": "INS-BARNIZ",
+      "destino": "PROD-MESA-COMEDOR"
+    },
+    {
+      "origen": "INS-BARNIZ",
+      "destino": "PROD-MESA-CENTRO"
+    },
+    {
+      "origen": "INS-BARNIZ",
+      "destino": "PROD-MESA-NOCHE"
+    },
+    {
+      "origen": "INS-BARNIZ",
+      "destino": "PROD-SILLA-COMEDOR"
+    },
+    {
+      "origen": "INS-BARNIZ",
+      "destino": "PROD-BANCO-RECIBIDOR"
+    },
+    {
+      "origen": "INS-BARNIZ",
+      "destino": "PROD-COMODA"
+    },
+    {
+      "origen": "INS-BARNIZ",
+      "destino": "PROD-BANCO-TAPIZADO"
+    },
+    {
+      "origen": "INS-TELA",
+      "destino": "PROD-BANCO-TAPIZADO"
+    },
+    {
+      "origen": "PROV-TABLEROS",
+      "destino": "INS-MDF"
+    },
+    {
+      "origen": "PROV-TABLEROS",
+      "destino": "INS-MELAMINA"
+    },
+    {
+      "origen": "PROV-TABLEROS",
+      "destino": "INS-CONTRACHAPADO"
+    },
+    {
+      "origen": "PROV-TABLEROS",
+      "destino": "INS-CANTO"
+    },
+    {
+      "origen": "PROV-HERRAJES",
+      "destino": "INS-BISAGRAS"
+    },
+    {
+      "origen": "PROV-HERRAJES",
+      "destino": "INS-CORREDERAS"
+    },
+    {
+      "origen": "PROV-HERRAJES",
+      "destino": "INS-TIRADORES"
+    },
+    {
+      "origen": "PROV-HERRAJES",
+      "destino": "INS-PATAS"
+    },
+    {
+      "origen": "PROV-HERRAJES",
+      "destino": "INS-SOPORTES"
+    },
+    {
+      "origen": "PROV-TEXTILES",
+      "destino": "INS-TELA"
+    },
+    {
+      "origen": "PROV-ESPUMAS",
+      "destino": "INS-ESPUMA"
+    },
+    {
+      "origen": "PROV-ADHESIVOS",
+      "destino": "INS-COLA"
+    },
+    {
+      "origen": "INS-MDF",
+      "destino": "PROD-MESA-NOCHE"
+    },
+    {
+      "origen": "INS-MDF",
+      "destino": "PROD-COMODA"
+    },
+    {
+      "origen": "INS-MELAMINA",
+      "destino": "PROD-ESCRITORIO"
+    },
+    {
+      "origen": "INS-MELAMINA",
+      "destino": "PROD-BIBLIOTECA"
+    },
+    {
+      "origen": "INS-MELAMINA",
+      "destino": "PROD-ARMARIO"
+    },
+    {
+      "origen": "INS-MELAMINA",
+      "destino": "PROD-MUEBLE-TV"
+    },
+    {
+      "origen": "INS-MELAMINA",
+      "destino": "PROD-ZAPATERO"
+    },
+    {
+      "origen": "INS-CONTRACHAPADO",
+      "destino": "PROD-ESCRITORIO"
+    },
+    {
+      "origen": "INS-CONTRACHAPADO",
+      "destino": "PROD-MESA-NOCHE"
+    },
+    {
+      "origen": "INS-CONTRACHAPADO",
+      "destino": "PROD-BIBLIOTECA"
+    },
+    {
+      "origen": "INS-CONTRACHAPADO",
+      "destino": "PROD-ARMARIO"
+    },
+    {
+      "origen": "INS-CONTRACHAPADO",
+      "destino": "PROD-COMODA"
+    },
+    {
+      "origen": "INS-CONTRACHAPADO",
+      "destino": "PROD-MUEBLE-TV"
+    },
+    {
+      "origen": "INS-CONTRACHAPADO",
+      "destino": "PROD-ZAPATERO"
+    },
+    {
+      "origen": "INS-CANTO",
+      "destino": "PROD-ESCRITORIO"
+    },
+    {
+      "origen": "INS-CANTO",
+      "destino": "PROD-BIBLIOTECA"
+    },
+    {
+      "origen": "INS-CANTO",
+      "destino": "PROD-ARMARIO"
+    },
+    {
+      "origen": "INS-CANTO",
+      "destino": "PROD-MUEBLE-TV"
+    },
+    {
+      "origen": "INS-CANTO",
+      "destino": "PROD-ZAPATERO"
+    },
+    {
+      "origen": "INS-BISAGRAS",
+      "destino": "PROD-ARMARIO"
+    },
+    {
+      "origen": "INS-BISAGRAS",
+      "destino": "PROD-MUEBLE-TV"
+    },
+    {
+      "origen": "INS-BISAGRAS",
+      "destino": "PROD-ZAPATERO"
+    },
+    {
+      "origen": "INS-CORREDERAS",
+      "destino": "PROD-ESCRITORIO"
+    },
+    {
+      "origen": "INS-CORREDERAS",
+      "destino": "PROD-MESA-NOCHE"
+    },
+    {
+      "origen": "INS-CORREDERAS",
+      "destino": "PROD-COMODA"
+    },
+    {
+      "origen": "INS-TIRADORES",
+      "destino": "PROD-ESCRITORIO"
+    },
+    {
+      "origen": "INS-TIRADORES",
+      "destino": "PROD-MESA-NOCHE"
+    },
+    {
+      "origen": "INS-TIRADORES",
+      "destino": "PROD-ARMARIO"
+    },
+    {
+      "origen": "INS-TIRADORES",
+      "destino": "PROD-COMODA"
+    },
+    {
+      "origen": "INS-TIRADORES",
+      "destino": "PROD-MUEBLE-TV"
+    },
+    {
+      "origen": "INS-TIRADORES",
+      "destino": "PROD-ZAPATERO"
+    },
+    {
+      "origen": "INS-PATAS",
+      "destino": "PROD-MESA-COMEDOR"
+    },
+    {
+      "origen": "INS-PATAS",
+      "destino": "PROD-ESCRITORIO"
+    },
+    {
+      "origen": "INS-PATAS",
+      "destino": "PROD-MESA-CENTRO"
+    },
+    {
+      "origen": "INS-PATAS",
+      "destino": "PROD-BANCO-RECIBIDOR"
+    },
+    {
+      "origen": "INS-PATAS",
+      "destino": "PROD-MUEBLE-TV"
+    },
+    {
+      "origen": "INS-PATAS",
+      "destino": "PROD-BANCO-TAPIZADO"
+    },
+    {
+      "origen": "INS-SOPORTES",
+      "destino": "PROD-BIBLIOTECA"
+    },
+    {
+      "origen": "INS-ESPUMA",
+      "destino": "PROD-BANCO-TAPIZADO"
+    },
+    {
+      "origen": "INS-COLA",
+      "destino": "PROD-MESA-COMEDOR"
+    },
+    {
+      "origen": "INS-COLA",
+      "destino": "PROD-MESA-CENTRO"
+    },
+    {
+      "origen": "INS-COLA",
+      "destino": "PROD-MESA-NOCHE"
+    },
+    {
+      "origen": "INS-COLA",
+      "destino": "PROD-SILLA-COMEDOR"
+    },
+    {
+      "origen": "INS-COLA",
+      "destino": "PROD-BANCO-RECIBIDOR"
+    },
+    {
+      "origen": "INS-COLA",
+      "destino": "PROD-COMODA"
+    },
+    {
+      "origen": "INS-COLA",
+      "destino": "PROD-BANCO-TAPIZADO"
+    }
+  ]
+}
