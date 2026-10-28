@@ -19,14 +19,6 @@ Aplicación universitaria local para organizar proveedores, insumos, productos y
 
 La contraseña de MariaDB se solicita de forma oculta. No existe una contraseña de administrador predeterminada. No subas contraseñas, usuarios exportados ni copias de la base al repositorio.
 
-## Documentación
-- [Guía sencilla de uso y construcción](docs/GUIA_SENCILLA.md) · [PDF](docs/Guia-AbastecePyme.pdf)
-- [Instalación y configuración](docs/INSTALACION.md)
-- [Subir a GitHub](docs/SUBIR_A_GITHUB.md)
-- [Modelo de base de datos](docs/SCHEMA.md)
-- [Análisis de impacto y contrato de API](docs/IMPACTO.md)
-- [Pruebas y validación del paquete](docs/PRUEBAS.md)
-
 ## Qué significa “alcanzar” en este negocio
 
 En AbastecePyme, **“alcanzar” un elemento significa llegar a él siguiendo una cadena de dependencias del grafo**. Las flechas se guardan desde el requisito hacia el elemento que lo necesita.
